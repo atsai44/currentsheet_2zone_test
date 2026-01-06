@@ -4,17 +4,14 @@ __pycache__/
 *.pyc
 
 # Outputs
-*.out
-*.err
-*.log
+**/*.out
+**/*.err
+**/*.log
 
 # Data
-data/
-*.h5
-*.athdf
-*.vtk
-*.bin
-*.rst
+**/*.vtk
+**/*.bin
+**/*.rst
 
 # Other git repos
 PLASMAtools 
