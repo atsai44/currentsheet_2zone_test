@@ -1,0 +1,21 @@
+cat << EOF > .gitignore
+# Python
+__pycache__/
+*.pyc
+
+# Outputs
+*.out
+*.err
+*.log
+
+# Data
+data/
+*.h5
+*.athdf
+*.vtk
+*.bin
+*.rst
+
+# Editors
+.vscode/
+EOF
