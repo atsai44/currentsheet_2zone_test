@@ -5,6 +5,8 @@ import os
 import math
 from celluloid import Camera
 
+########## convert this file to read bin files ###############
+
 # -------------------------
 # Simulation parameters
 # -------------------------

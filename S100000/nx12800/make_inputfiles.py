@@ -28,7 +28,7 @@ va = np.sqrt(b0 ** 2 / rho0)
 cs = np.sqrt(gamma * p0/rho0)
 cms = np.sqrt(va**2 + cs**2)
 eta = L * va / S
-epsp = 0.2 * p0 #0.2 * p0 #0.5 * p0 #0.15 * p0
+epsp = 0.2*p0  #0.2 * p0 #0.5 * p0 #0.15 * p0
 
 
 # set t_limit and dt using t_crossing
