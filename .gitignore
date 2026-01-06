@@ -12,6 +12,7 @@ __pycache__/
 **/*.vtk
 **/*.bin
 **/*.rst
+**/*.loc
 
 # Other git repos
 PLASMAtools 
