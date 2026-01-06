@@ -16,6 +16,9 @@ data/
 *.bin
 *.rst
 
+# Other git repos
+PLASMAtools 
+
 # Editors
 .vscode/
 EOF

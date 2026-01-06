@@ -1,0 +1,66 @@
+    -A, --account=<name>                 charge job to specified account
+    -B, --extra-node-info=<S>[:<C>[:<T>]] extra node information
+        --bb=<spec>                      burst buffer specifications
+        --bbf=<file_name>                burst buffer specification file
+        --bell                           ring the terminal bell when allocated
+    -C, --constraint=<list>              specify a list of constraints
+    -c, --cpus-per-task=<ncpus>          number of cpus required per task
+        --comment=<name>                 arbitrary comment
+        --contiguous                     demand a contiguous range of nodes
+        --cores-per-socket=<C>           number of cores per socket to allocate
+        --cpus-per-gpu=<n>               number of CPUs required per allocated GPU
+    -D, --chdir=<directory>              set working directory for batch script
+    -d, --dependency=<type>:<jobid>      defer job until condition is satisfied
+        --deadline=<time>                cancel if job would end after deadline
+        --exclusive                      allocate whole nodes
+        --export=<names>                 specify environment variables to export
+    -F, --nodefile=<filename>            request a specific list of hosts
+    -G, --gpus=<n>                       count of GPUs required for the job
+        --gpu-bind=<type>                task to gpu binding options
+        --gpu-freq=[<type]=val>[,<type=val>][,verbose] frequency and voltage of GPUs
+        --gpus-per-node=<n>              number of GPUs required per allocated node
+        --gpus-per-socket=<n>            number of GPUs required per allocated socket
+        --gpus-per-task=<n>              number of GPUs required per spawned task
+    -h, --help                           show this help message
+    -H, --hold                           submit job in held state
+    -i <in>                              file for batch script's standard input
+    -I, --immediate                      only if resources immediately available
+    -J, --job-name=<jobname>             name of job
+    -k, --no-kill                        do not kill job on node failure
+    -M, --clusters=<names>               Comma separated list of clusters
+    -m, --distribution=<type>            distribution of processes over nodes
+        --mail-type=<type>               email notify on job state change
+        --mail-user=<user>               email address for job state notification
+        --mem-per-cpu=<MB>               amount of real memory per cpu
+        --mem-per-gpu=<n>                real memory required per allocated GPU
+        --mem=<MB>                       minimum amount of real memory
+        --mincpus=<n>                    minimum number of logical procs per node
+    -N, --nodes=<N>                      number of nodes on which to run (N) 
+    -n, --ntasks=, --tasks=<ntasks>     number of tasks to run
+        --nice=<value>                   decrease scheduling priority by value
+        --no-bell                        ring the terminal bell when allocated
+        --ntasks-per-core=<n>            number of tasks to invoke on each core
+        --ntasks-per-node=<n>            number of tasks to invoke on each node
+        --ntasks-per-socket=<n>          number of tasks to invoke on each socket
+    -O, --overcommit                     overcommit resources
+    -p, --partition=<partition>          partition requested
+        --profile=<value>                gather job profiling data
+    -q, --qos=<qos>                      quality of service
+    -Q, --quiet                          quiet mode
+        --reservation=<name>             allocate resources from named reservation
+    -S, --core-spec=<cores>              count of reserved cores
+        --signal=[<B>:]<num>[@<time>]    send signal when close to time limit
+        --sockets-per-node=<S>           number of sockets per node to allocate
+        --spread-job                     spread job on as many nodes as possible
+    -t, --time=<HH:MM:SS>                time limit
+        --thread-spec=<threads>          count of reserved threads
+        --threads-per-core=<T>           number of threads per core to allocate
+        --time-min=<minutes>             minimum time limit (if distinct)
+    -u, --usage                          display brief usage message
+        --use-min-nodes                  prefer smallest range of node counts
+    -v, --verbose                        verbose mode
+    -V, --version                        output version information and exit
+    -w, --nodelist=<hosts...>            request a specific list of hosts
+        --wckey=<wckey>                  ignored
+    -x, --exclude=<hosts...>             exclude a specific list of hosts
+        --x11                            set up X11 forwarding to compute node(s)

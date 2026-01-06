@@ -1,0 +1,85 @@
+# AthenaXXX input file for diffusion of current sheet ()
+
+<comment>
+problem   = 2 zone current sheet with resistivity
+
+<job>
+basename  = BASE_NAME  # problem ID: basename of output filenames
+
+
+<mesh>
+nghost    = 3 #2         # Number of ghost cells
+nx1       = N_X     # Number of zones in X1-direction
+x1min     = -L2X      # minimum value of X1
+x1max     = L2X       # maximum value of X1
+ix1_bc    = outflow   # Inner-X1 boundary condition flag
+ox1_bc    = outflow   # Outer-X1 boundary condition flag
+
+nx2       = N_Y #256       # Number of zones in X2-direction
+x2min     = -L2X      # minimum value of X2
+x2max     = L2X      # maximum value of X2
+ix2_bc    = periodic  # Inner-X2 boundary condition flag
+ox2_bc    = periodic  # Outer-X2 boundary condition flag
+
+nx3       = N_Z         # Number of zones in X3-direction
+x3min     = -L2Z      # minimum value of X3
+x3max     = L2Z      # maximum value of X3
+ix3_bc    = periodic  # Inner-X3 boundary condition flag
+ox3_bc    = periodic  # Outer-X3 boundary condition flag
+
+<meshblock>
+nx1       = 200 #100 #128       # Number of cells in each MeshBlock, X1-dir
+nx2       = 200 #100 #128      # Number of cells in each MeshBlock, X2-dir
+nx3       = 1         # Number of cells in each MeshBlock, X3-dir
+
+<time>
+evolution  = dynamic   # dynamic/kinematic/static
+integrator = rk3 #rk2       # time integration algorithm
+cfl_number = 0.4       # The Courant, Friedrichs, & Lewy (CFL) Number
+nlim       = -1        # cycle limit
+tlim       = T_LIMIT #10000.0   # time limit
+ndiag      = 1         # cycles between diagostic output
+
+<mhd>
+eos         = ideal    # EOS type
+resistivity = ohmic    # Ohmic resistivity
+#eta_ohm     = 1.0e-4   # coefficient of Ohmic resistivity # this doesn't do anything
+ohmic_resistivity = ETA_OHM    # 0.35 0.035 0.0035 set for S = 100 1000 10000
+reconstruct = plm      # spatial reconstruction method
+rsolver     = hlld     # Riemann-solver to be used
+gamma       = GAMMA     # gamma = C_p/C_v
+
+<problem>
+iprob = 3                 # P = rho^(gamma)
+b0 = B0 # alpha / sqrt gamma               # Amplitude of reconnecting field #bb0 in the cpp file for some reason
+a0 = A0                 # Width of current sheet
+bg = 0.0                  # guide field strength
+kval = 1.0                # wave vector in y direction
+p0 =  P0            #1.0/eos.gamma        # pressure far away
+epsp = EPSP #6.0 #2.0 #0.9 #0.1 #0.02               # pinch perturbation on pressure to start reconnection
+
+<output1>
+file_type   = bin       # Tabular data dump
+variable    = mhd_w     # variables to be output
+data_format = %12.5e    # Optional data format string
+dt          = DT_VTK        # time increment between outputs
+
+<output2>
+file_type   = bin       # Tabular data dump
+variable    = mhd_bcc   # variables to be output
+data_format = %12.5e    # Optional data format string
+dt          = DT_VTK        # time increment between outputs
+
+<output3>
+file_type   = bin       # Tabular data dump
+variable    = mhd_jz    # variables to be output
+data_format = %12.5e    # Optional data format string
+dt          = DT_VTK #0.0001     # time increment between outputs
+
+<output4>
+file_type  = hst       # History data dump
+dt         = DT_HST      # time increment between outputs
+
+<output5>
+file_type = rst
+dt = DT_RESTART
